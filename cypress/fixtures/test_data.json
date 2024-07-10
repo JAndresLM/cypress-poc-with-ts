@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Restaurante Kleavers, Alajuela Province, Quesada",
+    "expectedLat": "10.349630",
+    "expectedLong": "-84.434210"
+  },
+  {
+    "name": "Jardin Else Kientzler Provincia De Alajuela, Sarchí, CR",
+    "expectedLat": "10.102296",
+    "expectedLong": "-84.338160"
+  },
+  {
+    "name": "Catarata Tesoro Escondido 708, Provincia de Alajuela, Bajos del Toro, CR",
+    "expectedLat": "10.212514",
+    "expectedLong": "-84.278619"
+  }
+]
