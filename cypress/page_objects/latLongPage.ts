@@ -6,24 +6,25 @@ export class LatLongPage {
   get latitudeInput() { return cy.get('input#lat'); }
   get longitudeLabel() { return cy.get('label[for="lng"]'); }
   get longitudeInput() { return cy.get('input#lng'); }
-  get findButton() { return cy.get('#btnfind'); }
+  get findButton() { return cy.get('button#btnfind'); }
   get errorMessage(){return cy.get('p')}
 
   visit() {
-    cy.visit('https://www.latlong.net/');
+    cy.visit('https://www.latlong.net/',  { timeout: 120000 });
   }
 
   typePlaceName(placeName: string) {
-    this.placeNameInput.type(placeName);
+    this.placeNameInput.type(placeName)
   }
 
   findCoordinates() {
     this.findButton.click();
+
   }
 
   verifyExpectedCoordinates(expectedLat: string, expectedLong: string) {
-    this.latitudeInput.should('have.text', expectedLat)
-    this.longitudeInput.should('have.text', expectedLong)
+    this.latitudeInput.should('have.value', expectedLat)
+    this.longitudeInput.should('have.value', expectedLong)
   }
 
   verifyErrorMessage(expectedError: string){

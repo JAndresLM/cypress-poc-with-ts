@@ -1,4 +1,4 @@
-import { LatLongPage } from '../page_objects/latLongPage';
+import { LatLongPage } from '../../page_objects/latLongPage';
 
 describe('Latitude and Longitude Tests', () => {
     const latLongPage = new LatLongPage();
@@ -18,6 +18,7 @@ describe('Latitude and Longitude Tests', () => {
         cy.fixture('test_data.json').then((data) => {
             data.forEach(element => {
                 latLongPage.typePlaceName(element.name)
+                latLongPage.findCoordinates()
                 latLongPage.verifyExpectedCoordinates(element.expectedLat, element.expectedLong)
             });
         })
